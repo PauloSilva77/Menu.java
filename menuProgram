@@ -1,0 +1,64 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Usuarios;
+
+public class Menu {
+	public static void main(String[] args) {
+		menu();	
+	}
+		public static void menu() {
+			
+			
+			Locale.setDefault(Locale.US);
+			Scanner sc = new Scanner(System.in);
+			Usuarios users = new Usuarios();
+		
+			
+			System.out.println("1 - CADASTRO ; 2 - REMOVER CADASTRO ; 3 - SAIR");
+			System.out.println();
+			System.out.printf("Escolha uma Opção: ");
+			int x = sc.nextInt();
+			
+			switch (x) {
+			
+			case 1:
+
+				System.out.printf("Digite seu nome para cadastro: ");
+				String user = sc.next();
+				users.cadUser(user);
+				System.out.println("Usuario cadastrado!");
+				System.out.println();
+				menu();
+				break;
+
+			case 2: 
+				
+				System.out.println("Usuario Deletado!");
+				String remove = "null";
+				users.removedUser(remove);
+				System.out.println();
+				menu();
+				break;
+				
+			case 3: 
+				
+				System.out.println("Exiting...");
+				break;
+				
+			default: 
+				
+				System.out.println("Digito Incorreto! Tente novamente!");
+				System.out.println();
+				menu();
+				break;
+			}
+			sc.close();	
+		}
+	
+}
+
+	
+	
