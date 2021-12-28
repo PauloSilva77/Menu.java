@@ -1,0 +1,16 @@
+package entities;
+
+public class Usuarios {
+	
+	public String user;
+	
+	
+public void cadUser(String user) {
+	this.user = user;
+}
+
+ public void removedUser(String remove) { 
+	 this.user = "null"; 
+ }
+
+}
